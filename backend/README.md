@@ -13,7 +13,7 @@
 1. make changes in *DefaultConnection* of `appsettings.json` 
     ```json
       "ConnectionStrings": {
-        "DefaultConnection": "server=SERVER_NAME;database=DATABASE_NAME;trusted_connection=true;"
+        "DefaultConnection": "server=WINDOWS11\\SQLEXPRESS;database=Audit;trusted_connection=true;"
       },
     ```
 
@@ -40,92 +40,3 @@
     ```powershell
     dotnet run
     ```
-
-3. Use `postman` or `thunderclient` further
-    
-    1. **POST** method
-    
-    ```
-    https://localhost:5001/api/authenticate
-    ```
-
-    There in *basic auth* use these credentials
-
-    ```http
-    UserName: admin@localhost
-    Password: Passcode1
-    ```
-
-    ##### `Token` would be generated
-
-    <details>
-    <summary>Screenshots</summary>
-    <img  src="https://user-images.githubusercontent.com/76637730/185432139-1499ed0d-742e-49b5-871c-08b974b9127e.png"> <br>       
-    Response <br> 
-    <img  src="https://user-images.githubusercontent.com/76637730/185439279-51db7471-c966-4dcb-bfb0-5f64e4cb1eac.png"> 
-    </details>
-
-### thunderclient Log
-
-  #### 1. `POST` login
-```
-https://localhost:5001/api/authenticate
-```
-
-  #### 2. `GET` all_users
-```
-https://localhost:5001/api/authenticate
-```
-
-  #### 3. `GET` first_user
-```
-https://localhost:5001/api/administration/1
-```
-
-  #### 4. `POST` create_user
-```
-https://localhost:5001/api/authenticate
-```
-
-  #### 5. `DELETE` first_user
-```
-https://localhost:5001/api/authenticate/1
-```
-
----
-
-  #### 1. `GET` all_orders_by_order
-```
-https://localhost:5001/api/order/order
-```
-
-  #### 2. `GET` all_orders_by_drug
-```
-https://localhost:5001/api/order/drug
-```
-
-  #### 1. `POST` order
-```
-https://localhost:5001/api/products/1
-```
-```http
-{
-  "MemberId":"2434",
-  "ProductName": "ICICI",
-  "RequiredDate": "1999-11-18T06:30:00",
-  "Quantities": 2,
-  "UserId":"1",
-}
-```
-
----
-
-  #### 1. `GET` all_messages
-```
-https://localhost:5001/api/ContactUs/
-```
-
-  #### 1. `GET` first_messages
-```
-https://localhost:5001/api/ContactUs/1
-```
