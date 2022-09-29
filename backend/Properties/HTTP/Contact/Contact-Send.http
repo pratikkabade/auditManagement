@@ -1,10 +1,18 @@
 # Contact - Send Message
 
-POST https://localhost:5001/api/ContactUs HTTP/1.1
+POST https://localhost:5001/api/Form HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "test",
-  "email": "test@mail.com",
-  "message": "this is a sample message from sample"
+  "question0": "Yes",
+  "question1": "In Progress",
+  "question2": "In Progress",
+  "question3": "In Progress",
+  "question4": "Yes",
+  "question5": "Yes",
+  "question6": "In Progress",
+  "question7": "Yes",
+  "question8": "No",
+  "question9": "No",
+  "email": "user@gmail.com"
 }

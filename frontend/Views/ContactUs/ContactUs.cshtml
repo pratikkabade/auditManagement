@@ -1,22 +1,70 @@
 @{
-    ViewBag.Title = "ContactUs";
+    ViewBag.Title = "Form";
 }
-@model ContactUs
+@model Form
 
-<form asp-action="ContactUs" asp-controller="ContactUs" method="post" class="contactForm">
-    <h1 class="headerText">ContactUs</h1>
-    <div class="form-group">
-        <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Enter your name">
+
+<form asp-action="Form" asp-controller="Form" method="post" class="contactForm">
+    <h1 class="headerText">Form</h1>
+    <p>
+        <input asp-for="Email" value="@ViewBag.LogMessage" hidden readonly />
+    </p>
+
+    <div class="form-group submition inputSelect">
+        <h3>question_1</h3>
+        <input asp-for="question0" type="text" placeholder="Your status" list="progress" required />
     </div>
-    <div class="form-group">
-        <input asp-for="Date" type="text" class="form-control" id="date" value=@DateTime.Today.ToString("d") hidden>
+
+    <div class="form-group submition">
+        <h3>question_2</h3>
+        <input asp-for="question1" type="text" placeholder="Your status" list="progress" required>
     </div>
-    <div class="form-group">
-        <input asp-for="Email" type="email" class="form-control" id="email" placeholder="Enter email">
+
+    <div class="form-group submition">
+        <h3>question_3</h3>
+        <input asp-for="question2" type="text" placeholder="Your status" list="progress" required>
     </div>
-    <div class="form-group">
-        <textarea asp-for="Message" class="form-control" id="message" rows="3"
-            placeholder="Enter your message"></textarea>
+
+    <div class="form-group submition">
+        <h3>question_4</h3>
+        <input asp-for="question3" type="text" placeholder="Your status" list="progress" required>
     </div>
+
+    <div class="form-group submition">
+        <h3>question_5</h3>
+        <input asp-for="question4" type="text" placeholder="Your status" list="progress" required>
+    </div>
+
+    <div class="form-group submition">
+        <h3>question_6</h3>
+        <input asp-for="question5" type="text" placeholder="Your status" list="progress" required>
+    </div>
+
+    <div class="form-group submition">
+        <h3>question_7</h3>
+        <input asp-for="question6" type="text" placeholder="Your status" list="progress" required>
+    </div>
+
+    <div class="form-group submition">
+        <h3>question_8</h3>
+        <input asp-for="question7" type="text" placeholder="Your status" list="progress" required>
+    </div>
+
+    <div class="form-group submition">
+        <h3>question_9</h3>
+        <input asp-for="question8" type="text" placeholder="Your status" list="progress" required>
+    </div>
+
+    <div class="form-group submition">
+        <h3>question_10</h3>
+        <input asp-for="question9" type="text" placeholder="Your status" list="progress" required>
+    </div>
+
+    <datalist id="progress">
+        <option>Yes</option>
+        <option>In Progress</option>
+        <option>No</option>
+    </datalist>
+
     <button type="submit" class="contactButton">Submit</button>
 </form>

@@ -13,10 +13,10 @@ namespace BackendAPI.Controllers
     // [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class ContactUsController : Controller
+    public class FormController : Controller
     {
         private DataBaseContext msg_context;
-        public ContactUsController(DataBaseContext msg_context)
+        public FormController(DataBaseContext msg_context)
         {
             this.msg_context = msg_context;
         }
@@ -24,27 +24,39 @@ namespace BackendAPI.Controllers
         // INDEX
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public IEnumerable<ContactUs> Get()
+        public IEnumerable<Form> Get()
         {
             return msg_context.ContactMsg.ToList();
         }
 
+
         // CREATE
         [HttpPost]
-        public string Post([FromBody] ContactUs message)
+        public string Post([FromBody] Form message)
         {
             this.msg_context.ContactMsg.Add(message);
             this.msg_context.SaveChanges();
             return "Message sent successfully!";
         }
 
+
         // DETAILS
         [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
-        public ContactUs Get(int id)
+        public Form Get(int id)
         {
             return this.msg_context.ContactMsg.Where(contact => contact.Id == id).FirstOrDefault();
         }
+
+
+        // DETAILS
+        [Authorize(Roles = "Admin")]
+        [HttpGet("email/{email}")]
+        public Form GetByEmail(string email)
+        {
+            return this.msg_context.ContactMsg.Where(contact => contact.Email == email).FirstOrDefault();
+        }
+
 
         // DELETE
         // [Authorize(Roles = "Admin")]
