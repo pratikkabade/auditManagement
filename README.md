@@ -1,101 +1,40 @@
-# WebAPI-MVC
+# auditManagement
 
-### KeyWords
+Built on [template](https://github.com/firenudge-io/WebAPI-MVC) 
 
-1. ContactUs
-    - Date
-    - Name
-    - Email
-    - Message
+Project Depricated as of **Sept-29**.
 
-2. Order 
-    - MemberId
-    - ProductName
-    - RequiredDate
-    - Quantities
-
-3. SERVER_NAME
-
-4. DATABASE_NAME
-
-5. Template
+[![img](https://wakatime.com/badge/user/94eceae7-683a-4d18-a44b-59d4ffd2eb5d/project/44bcb4cc-809f-4734-81ba-b86e1418458e.svg)](https://wakatime.com/@pratikkabade/projects/gfiqvtccqs)
 
 
-### Structure
+## Screenshots
 
-```
-backend
-        Controllers
-                ContactUs
-                Order
-                Users
-                    Administration
-                    Authentication
-        Entities
-                DataBaseContext 
-        Models
-                ContactUs
-                Order
-                Users
-                    Roles
-                    Users
-        Properties
-                HTTP
-                SQL
+### Homepage
 
-frontend
-        Controllers
-                ContactUs
-                Miscellaneous
-                    Error
-                    Home
-                    Messages
-                Order
-                Users
-                    NewUser
-                    Users
-        Models
-                ContactUs
-                Order
-                Users
-                    JWT
-                    Users
-        Views
-                ContactUs
-                    ContactUs
-                    Index
-                Error
-                    Error401
-                    Error404
-                    Load1
-                    Load2
-                    Load3
-                    Load4
-                    NotLoggedIn
-                    Unexpected
-                Messages
-                    Create
-                    Delete
-                    Edit
-                    Order
-                NewUser
-                    Create
-                    Delete
-                    DeleteByMail
-                    Edit
-                    EditByMail
-                    Users
-                Order
-                    Index
-                    MyOrder
-                    Order
-                Shared
-                    _Layout
-                    Error401
-                    Error404
-                User
-                    ControlPannel
-                    HomePage
-                    Login
-                    MyAccount
-```
+![image](https://github.com/pratikkabade/auditManagement/raw/main/frontend/.assets/.readme_assets/localhost_5002_.png)
+
+---
+
+### User_Login
+
+![image](https://github.com/pratikkabade/auditManagement/raw/main/frontend/.assets/.readme_assets/localhost_5002_User_Login.png)
+
+---
+
+### Homepage
+
+![image](https://github.com/pratikkabade/auditManagement/raw/main/frontend/.assets/.readme_assets/localhost_5002_User_HomePage.png)
+
+---
+
+### Form
+
+![image](https://github.com/pratikkabade/auditManagement/raw/main/frontend/.assets/.readme_assets/localhost_5002_Form_Form.png)
+
+---
+
+### All Form
+
+![image](https://github.com/pratikkabade/auditManagement/raw/main/frontend/.assets/.readme_assets/localhost_5002_Form.png)
+
+---

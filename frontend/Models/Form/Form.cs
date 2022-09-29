@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Text.Json.Serialization;
-
-namespace BackendAPI.Models
+namespace Frontend.Models
 {
     public class Form
     {
+        public Form()
+        {
+        }
         public int Id { get; set; }
         public string question0 { get; set; }
         public string question1 { get; set; }
@@ -17,9 +18,7 @@ namespace BackendAPI.Models
         public string question8 { get; set; }
         public string question9 { get; set; }
 
-
         // ADVANCED
         public string Email { get; set; }
-
     }
 }

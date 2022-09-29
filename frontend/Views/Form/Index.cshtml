@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Contacts";
+}
+@model List<Form>
+
+
+<table class="table table-condensed pushDown">
+    <thead>
+        <tr>
+            <th style="width: 10%;">Email</th>
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+
+        {
+            <tr>
+                <td style="width: 10%;">@item.Email</td>
+                <td>
+                    <Details>
+                        <Summary>Details</Summary>
+                        <a href="mailto:@item.Email">@item.Email</a> <br> <br>
+                        <p><kbd>question_1</kbd> <span id="ans" class="ans">@item.question0</span></p>
+                        <p><kbd>question_2</kbd> <span id="ans" class="ans">@item.question1</span></p>
+                        <p><kbd>question_3</kbd> <span id="ans" class="ans">@item.question2</span></p>
+                        <p><kbd>question_4</kbd> <span id="ans" class="ans">@item.question3</span></p>
+                        <p><kbd>question_5</kbd> <span id="ans" class="ans">@item.question4</span></p>
+                        <p><kbd>question_6</kbd> <span id="ans" class="ans">@item.question5</span></p>
+                        <p><kbd>question_7</kbd> <span id="ans" class="ans">@item.question6</span></p>
+                        <p><kbd>question_8</kbd> <span id="ans" class="ans">@item.question7</span></p>
+                        <p><kbd>question_9</kbd> <span id="ans" class="ans">@item.question8</span></p>
+                        <p><kbd>question_10</kbd> <span id="ans" class="ans">@item.question9</span></p>
+                    </Details>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

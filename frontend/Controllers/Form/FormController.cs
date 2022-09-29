@@ -16,10 +16,10 @@ using Frontend.Models;
 namespace Frontend.Controllers
 {
 
-    public class ContactUsController : Controller
+    public class FormController : Controller
     {
         private static HttpClient httpMsgClient = new HttpClient();
-        public ContactUsController(IConfiguration configuration)
+        public FormController(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -29,7 +29,7 @@ namespace Frontend.Controllers
 
         //CREATE
         [HttpGet]
-        public async Task<IActionResult> ContactUs()
+        public async Task<IActionResult> Form()
         {
             ViewBag.LogMessage = HttpContext.Session.GetString("UserName");
             await Task.Delay(1000);
@@ -37,12 +37,12 @@ namespace Frontend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ContactUs(ContactUs contactMsg)
+        public async Task<IActionResult> Form(Form contactMsg)
         {
             if (ModelState.IsValid)
             {
                 var serializedProductToCreate = JsonConvert.SerializeObject(contactMsg);
-                var request = new HttpRequestMessage(HttpMethod.Post, Configuration.GetValue<string>("WebAPIBaseUrl") + "/ContactUs");
+                var request = new HttpRequestMessage(HttpMethod.Post, Configuration.GetValue<string>("WebAPIBaseUrl") + "/Form");
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 request.Content = new StringContent(serializedProductToCreate);
                 request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -69,17 +69,17 @@ namespace Frontend.Controllers
         {
             httpMsgClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             httpMsgClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token"));
-            var response = await httpMsgClient.GetAsync(Configuration.GetValue<string>("WebAPIBaseUrl") + "/ContactUs");
+            var response = await httpMsgClient.GetAsync(Configuration.GetValue<string>("WebAPIBaseUrl") + "/Form");
             var content = await response.Content.ReadAsStringAsync();
 
             ViewBag.LogMessage = HttpContext.Session.GetString("UserName");
 
             if (response.IsSuccessStatusCode)
             {
-                var contactMsg = new List<ContactUs>();
+                var contactMsg = new List<Form>();
                 if (response.Content.Headers.ContentType.MediaType == "application/json")
                 {
-                    contactMsg = JsonConvert.DeserializeObject<List<ContactUs>>(content);
+                    contactMsg = JsonConvert.DeserializeObject<List<Form>>(content);
                 }
                 return View(contactMsg);
             }
