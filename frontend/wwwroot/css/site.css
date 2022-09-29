@@ -385,3 +385,8 @@ kbd {
 .PassWord i:hover {
   filter: brightness(1.4);
 }
+
+.mainSection img {
+  width: 200px;
+  height: 200px;
+}

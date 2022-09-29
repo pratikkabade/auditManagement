@@ -35,7 +35,6 @@
 @if (@ViewBag.LogMessage == "admin@localhost")
 {
     <div class="mainSection">
-        <h2>@Html.Raw(@ViewBag.Message)</h2>
         <div class="subSection">
             <h1>User administration</h1> <br>
 
@@ -46,23 +45,11 @@
     </div>
     <div class="mainSection">
         <div class="subSection">
-            <h1>Care</h1> <br>
+            <h1>Submissions</h1> <br>
 
-            <a asp-controller="ContactUs" asp-action="Index">
-                Messages
-            </a>
-
-        </div>
-    </div>
-
-    <div class="mainSection">
-        <div class="subSection">
-            <h1>Management</h1> <br>
-
-            <a asp-controller="Order" asp-action="Index">
-                Orders Recieved
-            </a>
-
+            <a asp-controller="Form" asp-action="Index">
+                Forms
+            </a> <br> <br>
         </div>
     </div>
 }
@@ -80,7 +67,7 @@ else
     </style>
 
     <div class="mainSection" style="box-shadow: none; margin-top:200px">
-        <img src="https://i.pinimg.com/originals/43/b7/88/43b788696f1888284f0f321fd0af022a.gif" alt="load">
+        <img src="https://content.dionglobal.in/tcsnewhtml5/images/loader.GIF" alt="load">
     </div>
     <script>
         setTimeout(function () {
